@@ -1,6 +1,6 @@
 # Домашнее задание №1
 
-## DAG - json_to_db
+## DAG - json_to_db и xml_to_db
 
 ## Проблемы 
 
