@@ -5,3 +5,7 @@
 ## Проблемы 
 
 `from airflow.providers.postgres.operators.postgres import PostgresOperator` не хотел импортироваться, хотя я запустил последнюю версию и использовал новейшие пакеты
+
+# Домашнее задание №2 ( Вебинар 3)
+
+## DAG - dz_2
