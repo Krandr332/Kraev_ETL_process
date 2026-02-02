@@ -30,6 +30,7 @@ def download_and_load_data(**context):
         format="%d-%m-%Y %H:%M",
         errors="coerce"
     )
+    df["noted_date"] = df["noted_date"].dt.floor("D")
 
     df = df[df["out/in"].str.lower() == "in"]
 
@@ -37,7 +38,10 @@ def download_and_load_data(**context):
     p95 = df["temp"].quantile(0.95)
     df = df[(df["temp"] >= p5) & (df["temp"] <= p95)]
 
-    daily_avg = df.groupby("noted_date")["temp"].mean().reset_index()
+    daily_avg = (
+        df.groupby("noted_date", as_index=False)
+        .agg(temp=("temp", "mean"))
+    )
 
     df["noted_date_str"] = df["noted_date"].dt.strftime("%Y-%m-%d")
     daily_avg["noted_date_str"] = daily_avg["noted_date"].dt.strftime("%Y-%m-%d")
