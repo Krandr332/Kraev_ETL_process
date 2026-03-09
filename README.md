@@ -26,17 +26,18 @@ ___
 # Финальное ДЗ 
 
 
-| Критерии                                                                                   | Адрес                                  | Скрин                                                                            |
-| ------------------------------------------------------------------------------------------ | -------------------------------------- | -------------------------------------------------------------------------------- |
-| Развёрнута реляционная база данных                                                         | server_other/docker-compose-other.yaml |                                                                                  |
-| Развёрнута нереляционная база данных                                                       | server_other/docker-compose-other.yaml | [[dock.png]]                                                                     |
-| Сгенерированы данные для нереляционной базы данных                                         | server_other/scripts/generate_data     | [[generate_data.png]]                                                            |
-| Сформированы пайплайны для репликации в PostgreSQL + Airflow                               | server_airflow/dags/replication_dag.py |                                                                                  |
-| Пайплайны должны содержать этап трансформации данных                                       | server_airflow/dags/replication_dag.py |                                                                                  |
-| Хранящиеся данные чистые: не имеют дублей, корректно партиционированы, поддаются аналитике |                                        |                                                                                  |
-| Пайплайны для репликации в PostgreSQL + Airflow описаны в документации                     |                                        |                                                                                  |
-| Сформированы пайплайны для создания аналитических витрин в Airflow                         | server_airflow/dags/mart_dags.py       |                                                                                  |
-| Создано 2 аналитические витрины в Airflow                                                  |                                        | [[mart_1.png]]<br>[[mart_d_1.png]]<br><br>[[mart_2.png]]<br>[[mart_d_2.png]]<br> |
+| Критерии                                                                                   | Адрес                                  | Скрин                                                                                                                                |
+| ------------------------------------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Развёрнута реляционная база данных                                                         | server_other/docker-compose-other.yaml | ![img\|132](dz_final/dock.png)                                                                                                       |
+| Развёрнута нереляционная база данных                                                       | server_other/docker-compose-other.yaml | ![img\|132](dz_final/dock.png)                                                                                                       |
+| Сгенерированы данные для нереляционной базы данных                                         | server_other/scripts/generate_data     | ![img](dz_final/generate_data.png)                                                                                                   |
+| Сформированы пайплайны для репликации в PostgreSQL + Airflow                               | server_airflow/dags/replication_dag.py |                                                                                                                                      |
+| Пайплайны должны содержать этап трансформации данных                                       | server_airflow/dags/replication_dag.py |                                                                                                                                      |
+| Хранящиеся данные чистые: не имеют дублей, корректно партиционированы, поддаются аналитике |                                        |                                                                                                                                      |
+| Пайплайны для репликации в PostgreSQL + Airflow описаны в документации                     |                                        |                                                                                                                                      |
+| Сформированы пайплайны для создания аналитических витрин в Airflow                         | server_airflow/dags/mart_dags.py       |                                                                                                                                      |
+| Создано 2 аналитические витрины в Airflow                                                  |                                        | ![img][dz_final/mart_1.png]<br>![img](dz_final/mart_d_1.png)<br><br>![img](dz_final/mart_2.png)<br>![img](dz_final/mart_d_2.png)<br> |
+
 
 ## Запуск
 
@@ -47,5 +48,5 @@ ___
 3)Заполнить MONGO данными 
 	`docker run --rm -it --network airflow_default -v $(pwd):/scripts python:3.9 bash -c "pip install pymongo faker && python /scripts/generate_data.py"`
 4)Добавить в айрфлов через админку источники данных
-	[[CONECTION.png]]
+	![img](dz_final/CONECTION.png)
 	
