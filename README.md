@@ -42,11 +42,18 @@ ___
 ## Запуск
 
 1)airflow 
+
 	Перейти в папку с айрфлов и поднять его -  `docker compose up -d`
+	
 2)BD
+
 	Перейти в папку с БД и поднять его -  `docker compose -f "docker-compose-other.yml" up -d`
+	
 3)Заполнить MONGO данными 
+
 	`docker run --rm -it --network airflow_default -v $(pwd):/scripts python:3.9 bash -c "pip install pymongo faker && python /scripts/generate_data.py"`
+	
 4)Добавить в айрфлов через админку источники данных
-	![img](dz_final/CONECTION.png)
+
+![img](dz_final/CONECTION.png)
 	
